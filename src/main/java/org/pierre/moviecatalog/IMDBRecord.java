@@ -6,30 +6,30 @@ import lombok.Data;
 @Data
 public class IMDBRecord {
 
-    @CsvBindByName
-    String Const;
-    @CsvBindByName
-    String Your_Rating;
-    @CsvBindByName
-    String Date_Rated;
-    @CsvBindByName
-    String Title;
-    @CsvBindByName
+    @CsvBindByName(column = "Const")
+    String filmId;
+    @CsvBindByName(column = "Your Rating")
+    String yourRating;
+    @CsvBindByName(column = "Date Rated")
+    String dateRated;
+    @CsvBindByName(column = "Title")
+    String title;
+    @CsvBindByName(column = "URL")
     String URL;
-    @CsvBindByName
-    String  Title_Type;
-    @CsvBindByName
-    String  IMDb_Rating;
-    @CsvBindByName
-    String Runtime_mins;
-    @CsvBindByName
-    String Year;
-    @CsvBindByName
-    String Genres;
-    @CsvBindByName
-    String Num_Votes;
-    @CsvBindByName
-    String Release_Date;
-    @CsvBindByName
-    String Directors;
+    @CsvBindByName(column = "Title Type")
+    String  titleType;
+    @CsvBindByName(column = "IMDb Rating")
+    String  IMDbRating;
+    @CsvBindByName(column = "Runtime (mins)")
+    String runtimeMins;
+    @CsvBindByName(column = "Year")
+    String year;
+    @CsvBindByName(column = "Genres")
+    String genres;
+    @CsvBindByName(column = "Num Votes")
+    String numVotes;
+    @CsvBindByName(column = "Release Date")
+    String releaseDate;
+    @CsvBindByName(column = "Directors")
+    String directors;
 }
