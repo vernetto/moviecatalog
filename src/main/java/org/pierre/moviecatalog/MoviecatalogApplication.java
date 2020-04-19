@@ -9,8 +9,13 @@ import java.util.List;
 
 @SpringBootApplication
 public class MoviecatalogApplication implements CommandLineRunner {
-    @Autowired
+    EmuleService emuleService;
     IMDBLoaderService imdbLoaderService;
+    @Autowired
+    public MoviecatalogApplication(IMDBLoaderService imdbLoaderService, EmuleService emuleService) {
+        this.imdbLoaderService = imdbLoaderService;
+        this.emuleService = emuleService;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(MoviecatalogApplication.class, args);
@@ -22,7 +27,10 @@ public class MoviecatalogApplication implements CommandLineRunner {
         ratings.stream().forEach(imdbRecord -> {
             System.out.println(imdbRecord);
         });
-
+        List<EmuleRecord> emules = emuleService.loadEmulerecords("sampleemule.txt");
+        emules.stream().forEach(emuleRecord -> {
+            System.out.println(emuleRecord);
+        });
 
     }
 }
